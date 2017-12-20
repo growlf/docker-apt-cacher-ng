@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+    aptcacher:
+        image: "aptcacher"
+        container_name: aptcacher
+        restart: unless-stopped
+        build: ./
+        ports:
+            - "3142:3142"
+        volumes:
+            - aptcacher-cache:/var/cache/apt-cacher-ng
+
+volumes:
+    aptcacher-cache:
