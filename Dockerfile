@@ -1,5 +1,6 @@
 FROM ubuntu
 
+MAINTAINER thenetyeti@thenetyeti.com
 VOLUME ["/var/cache/apt-cacher-ng"]
 
 RUN apt-get update && \
