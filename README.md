@@ -1,3 +1,5 @@
+[![GitHub issue state](https://img.shields.io/github/issues/detail/s/badges/shields/979.svg?style=plastic)](https://github.com/growlf/docker-apt-cacher-ng)
+
 # docker-apt-cacher-ng
 
 A docker implementation of [apt-cacher-ng](https://www.unix-ag.uni-kl.de/~bloch/acng/).
