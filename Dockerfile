@@ -16,7 +16,7 @@ RUN apt-get update && \
 # Generate the cach directory
 RUN mkdir -p /var/cache/apt-cacher-ng
 
-# Copy the config over - warning, this config allows full proxying and the service should be public facing with this config
+# Copy the config over - warning, this config allows full proxying and the service should NOT be public facing with this config as is
 COPY ./acng.conf /etc/apt-cacher-ng/
 
 # Get the centOS mirror list since it is not done automagically
