@@ -12,7 +12,7 @@ Ensure that you have already installed [docker](https://docs.docker.com/engine/i
 
 This assumes that you have already installed [docker-compose](https://docs.docker.com/compose/install/). Either clone the project or simply copy the [docker-compose.yml](https://raw.githubusercontent.com/growlf/docker-apt-cacher-ng/master/docker-compose.yml) file to your host system and execute the compose command from the same folder, like so:
 
-```
+```sh
 docker-compose pull
 docker-compose up -d
 ```
@@ -21,7 +21,7 @@ docker-compose up -d
 
 If you do not have docker-compose installed, you can simply run the container with docker itself, like so:
 
-```
+```sh
 docker pull yeticraft/docker-apt-cacher-ng
 docker volume create aptcacher-cache
 docker run -d -v aptcacher-cache:/var/cache/apt-cacher-ng -p 3142:3142 --name=aptcacher -it yeticraft/docker-apt-cacher-ng
