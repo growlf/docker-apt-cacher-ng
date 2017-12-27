@@ -1,8 +1,9 @@
 # docker-apt-cacher-ng
 
-A docker implementation of [apt-cacher-ng](https://www.unix-ag.uni-kl.de/~bloch/acng/).
-
 "A caching proxy. Specialized for package files from Linux distributors, primarily for Debian (and Debian based) distributions but not limited to those. See documentation of Apt-Cacher to learn what it's good for."
+
+A docker implementation of [apt-cacher-ng](https://www.unix-ag.uni-kl.de/~bloch/acng/).  This image contains support for CentOS as well as the usual suspects, and is intended to be used within a LAN and not on a public facing IP.
+
 
 ## USAGE
 
