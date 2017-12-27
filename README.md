@@ -33,6 +33,6 @@ Now you can test the container by browsing to the host system's IP on port 3142 
 
 The information page will report the containers address as the suggested proxy target - DO NOT USE THIS.  Instead, use the host system's IP.
 
-## Comming soon
+## Coming soon
 
 Support for CentOS clients.
