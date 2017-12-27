@@ -11,6 +11,8 @@ RUN apt-get update && \
 
 RUN mkdir -p /var/cache/apt-cacher-ng
 
+COPY ./acng.conf /etc/apt-cacher-ng/
+
 EXPOSE 3142
 
 CMD chmod 777 /var/cache/apt-cacher-ng && /etc/init.d/apt-cacher-ng start && tail -f /var/log/apt-cacher-ng/*
