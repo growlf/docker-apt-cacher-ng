@@ -10,7 +10,7 @@ Ensure that you have already installed [docker](https://docs.docker.com/engine/i
 
 ### Using the docker-compose method
 
-This assumes that you have already installed [docker-compose](https://docs.docker.com/compose/install/). Either clone the project or simply copy the ```docker-compose.yml``` file to your target system and execute the compose command like so:
+This assumes that you have already installed [docker-compose](https://docs.docker.com/compose/install/). Either clone the project or simply copy the [docker-compose.yml](https://raw.githubusercontent.com/growlf/docker-apt-cacher-ng/master/docker-compose.yml) file to your target system and execute the compose command from the same folder, like so:
 
 ```
 docker-compose pull
