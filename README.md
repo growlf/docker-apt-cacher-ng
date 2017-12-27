@@ -33,6 +33,6 @@ Now you can test the container by browsing to the host system's IP on port 3142 
 
 The information page will report the containers address as the suggested proxy target - DO NOT USE THIS.  Instead, use the host system's IP.
 
-## Coming soon
+The defaut `acng.conf` that is included allows full proxying, to simplify support for SSL/TLS repositories. This may be a security issue if access is allowed to the service from the open internet.  Please consider eaither changing the configuration or denying access via public interface.
 
-Support for CentOS clients.
+_Coming soon_: Support for CentOS clients.
