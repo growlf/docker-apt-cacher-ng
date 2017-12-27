@@ -8,7 +8,8 @@ VOLUME ["/var/cache/apt-cacher-ng"]
 # Update and install the basics - keep it cleaned
 RUN apt-get update && \
     apt-get install -y \
-       apt-cacher-ng && \
+       apt-cacher-ng \
+       curl && \
     apt-get clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
