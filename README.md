@@ -5,7 +5,7 @@
 A docker implementation of [apt-cacher-ng](https://www.unix-ag.uni-kl.de/~bloch/acng/).  This image contains support for CentOS as well as the usual suspects, and is intended to be used within a LAN and not on a public facing IP.
 
 
-## USAGE
+## INSTALLATION
 
 Ensure that you have already installed [docker](https://docs.docker.com/engine/installation/). Next, select the method you wish to use for running the container.
 
@@ -30,10 +30,19 @@ docker run -d -v aptcacher-cache:/var/cache/apt-cacher-ng -p 3142:3142 --name=ap
 
 Now you can test the container by browsing to the host system's IP on port 3142 (http://<host_system_ip>:3142) where you can see statistics and instructions on using the cacher.
 
+## USAGE
+
+### Ubuntu
+
+Create `/etc/apt/apt.conf.d/01proxy` with a single line specifying the cacher as the proxy like so:`Acquire::http::Proxy "http://<host_ip_address>:3142";`
+
+### CentOS
+
+Add a line to `/etc/yum.conf` like so: `proxy=http://<host_ip_address>:3142`
+
 ## NOTES
 
 The information page will report the containers address as the suggested proxy target - DO NOT USE THIS.  Instead, use the host system's IP.
 
 The defaut `acng.conf` that is included allows full proxying to simplify support for SSL/TLS repositories. This may be a security issue if access is allowed to the service from the open internet.  Please consider either changing the configuration or denying access via public interface.
 
-_Coming soon_: Support for CentOS clients.
