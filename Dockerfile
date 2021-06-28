@@ -5,6 +5,9 @@ MAINTAINER thenetyeti@thenetyeti.com
 # Set the working directory
 VOLUME ["/var/cache/apt-cacher-ng"]
 
+# Generate the cach directory
+RUN mkdir -p /var/cache/apt-cacher-ng
+
 # Update and install the basics - keep it cleaned
 RUN apt-get update && \
     apt-get install -y \
@@ -12,9 +15,6 @@ RUN apt-get update && \
        curl && \
     apt-get clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
-
-# Generate the cach directory
-RUN mkdir -p /var/cache/apt-cacher-ng
 
 # Copy the config over - warning, this config allows full proxying and the service should NOT be public facing with this config as is
 COPY ./acng.conf /etc/apt-cacher-ng/
