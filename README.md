@@ -40,6 +40,21 @@ Create `/etc/apt/apt.conf.d/01proxy` with a single line specifying the cacher as
 
 Add a line to `/etc/yum.conf` like so: `proxy=http://<host_ip_address>:3142`
 
+### Rasbian and Armbian
+
+I found that I needed to follow the advice from [TSpark](https://askubuntu.com/questions/1263284/apt-update-throws-signature-error-in-ubuntu-20-04-container-on-arm) on my Odroid, RaspBerry Pi 4 and similar ARM based evices.  This requirement may change (and hopefully disapear) - but for now (and until the repos catch up) this did solve the build/run issues related to the followin errors:
+
+    W: GPG error: http://ports.ubuntu.com/ubuntu-ports focal InRelease: At least one invalid signature was encountered.
+    E: The repository 'http://ports.ubuntu.com/ubuntu-ports focal InRelease' is not signed.
+
+For me it was a simple thing - on the host ARM device download the package and install it like so:
+
+    cd /tmp
+    wget http://http.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb
+    sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb
+
+After that, I was able to build (and run) the image with no issues.
+
 ## NOTES
 
 The information page will report the containers address as the suggested proxy target - DO NOT USE THIS.  Instead, use the host system's IP.
