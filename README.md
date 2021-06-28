@@ -61,3 +61,5 @@ The information page will report the containers address as the suggested proxy t
 
 The defaut `acng.conf` that is included allows full proxying to simplify support for SSL/TLS repositories. This may be a security issue if access is allowed to the service from the open internet.  Please consider either changing the configuration or denying access via public interface.
 
+Agood source (that was not around when I built this originally) is direct from the [Docker docs](https://docs.docker.com/samples/apt-cacher-ng/)
+
