@@ -2,7 +2,7 @@ version: '3'
 
 services:
     aptcacher:
-        image: "yeticraft/docker-apt-cacher-ng"
+        image: "yeticraft/docker-apt-cacher-ng:amd64"
         container_name: aptcacher
         restart: unless-stopped
         build: ./
